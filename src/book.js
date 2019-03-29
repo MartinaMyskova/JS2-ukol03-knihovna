@@ -26,4 +26,10 @@ export default class Book {
     console.log(`Super, přečetl jsi knihu ${this.title}.`);
   }
 
+ /* kontrola() {
+   console.log(`kontrola zmeny obsahu menene promenne ${this.title}.`) ;
+  }
+  */
+
+   
 }

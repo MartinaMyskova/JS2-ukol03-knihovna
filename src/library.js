@@ -60,4 +60,32 @@ export default class Library {
     }
   }
 
+
+  // docteni aktualni knihy
+  finishCurrentBook(){
+    if (this.currentBook !== null){
+    //console.log(`pocet neprectenych knih ${this.unreadBooks}`);
+    this.currentBook.read();
+    this.lastBook = this.currentBook;
+    //this.lastBook.kontrola();
+    this.currentBook = null;
+    this.unreadBooks++;
+    //console.log(`pocet neprectenych knih ${this.unreadBooks}`);
+    }
+  }
+
+  // vypis vsech neprectenych knih
+  listUnreadBooks() {
+    console.log(`list neprectenych knih:`);
+    function unread(book) {
+      //console.log(book);
+      return !book.isRead;
+      }
+    
+    let newBookList = this.bookList.filter(unread);
+   console.table(newBookList);
+    }
+  
+
+
 }
